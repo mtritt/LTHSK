@@ -160,15 +160,18 @@ FOREIGN KEY (MaNCC) REFERENCES tblNhaCungCap(MaNCC);
 
 --Nhập dữ liệu cho database
 --tblTaiKhoan
-INSERT INTO tblTaiKhoan VALUES
-(1, N'admin', N'123', N'Admin', 1),
-(2, N'nv01', N'123', N'NhanVien', 1),
-(3, N'nv02', N'123', N'NhanVien', 1),
-(4, N'nv03', N'123', N'NhanVien', 1),
-(5, N'kh01', N'123', N'KhachHang', 1),
-(6, N'kh02', N'123', N'KhachHang', 1),
-(7, N'kh03', N'123', N'KhachHang', 1),
-(8, N'kh04', N'123', N'KhachHang', 1);
+INSERT INTO tblTaiKhoan (MaTK, TenTK, Matkhau, Quyen, TrangThai)
+VALUES
+(1, N'admin', N'202cb962ac59075b964b07152d234b70', N'Admin', 1),
+(2, N'nv01', N'202cb962ac59075b964b07152d234b70', N'NhanVien', 1),
+(3, N'nv02', N'202cb962ac59075b964b07152d234b70', N'NhanVien', 1),
+(4, N'nv03', N'202cb962ac59075b964b07152d234b70', N'NhanVien', 1),
+(5, N'kh01', N'202cb962ac59075b964b07152d234b70', N'KhachHang', 1),
+(6, N'kh02', N'202cb962ac59075b964b07152d234b70', N'KhachHang', 1),
+(7, N'kh03', N'202cb962ac59075b964b07152d234b70', N'KhachHang', 1),
+(8, N'kh04', N'202cb962ac59075b964b07152d234b70', N'KhachHang', 1);
+
+
 
 --tblNhanVien
 INSERT INTO tblNhanVien VALUES
