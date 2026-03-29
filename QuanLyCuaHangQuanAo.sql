@@ -265,3 +265,10 @@ SET TongTien = (
     FROM tblChiTietPhieuNhap
     WHERE tblChiTietPhieuNhap.MaPN = tblPhieuNhap.MaPN
 );
+
+select * from tblSanPham
+select * from tblKhachHang
+select * from tblHoaDonBan
+select * from tblNhanVien
+select * from tblChiTietHDB
+select * from tblSanPhamChiTiet
