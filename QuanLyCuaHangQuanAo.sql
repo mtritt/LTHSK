@@ -366,3 +366,36 @@ SELECT * FROM tblSanPhamChiTiet
 ORDER BY MaSP ASC;
 SELECT COUNT(*) FROM tblSanPhamChiTiet
 
+use QuanLyCuaHangQuanAo
+CREATE PROCEDURE sp_LayTatCaHoaDon
+AS
+BEGIN
+    SELECT 
+        -- Thông tin chung của hóa đơn
+        hd.MaHDB,
+        hd.NgayBan,
+        hd.TrangThai,
+        hd.TongTien AS TongTienHoaDon,
+        
+        -- Thông tin người liên quan
+        kh.TenKH,
+        nv.TenNV,
+        
+        -- Thông tin chi tiết sản phẩm
+        sp.TenSP,
+        spct.MaSize,
+        spct.MaMau,
+        ct.GiaBan,
+        ct.SoLuongBan AS SL,
+        ct.ThanhTien
+    FROM tblHoaDonBan hd
+    LEFT JOIN tblKhachHang kh ON hd.MaKH = kh.MaKH
+    LEFT JOIN tblNhanVien nv ON hd.MaNV = nv.MaNV
+    INNER JOIN tblChiTietHDB ct ON hd.MaHDB = ct.MaHDB
+    INNER JOIN tblSanPhamChiTiet spct ON ct.MaSPCT = spct.MaSPCT
+    INNER JOIN tblSanPham sp ON spct.MaSP = sp.MaSP
+    ORDER BY hd.NgayBan DESC, hd.MaHDB DESC
+END
+
+EXEC sp_LayTatCaHoaDon;
+
